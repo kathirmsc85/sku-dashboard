@@ -377,7 +377,7 @@ const SKUDetail: React.FC = () => {
                               {new Date(note.created_at).toLocaleDateString()} at{' '}
                               {new Date(note.created_at).toLocaleTimeString()}
                             </span>
-                            {(user?.role === 'brand_user' || user?.role === 'merch_ops') && (
+                            {(user?.role === 'brand_user') && (
                               <div className="flex space-x-2">
                                 <button
                                   onClick={() => {

@@ -284,7 +284,6 @@ async def create_note(note: NoteCreate, current_user: User = Depends(get_current
     new_note = Note(
         id=note_id,
         sku_id=note.sku_id,
-        user_id=current_user.id,
         content=note.content,
         created_at=now,
         updated_at=now
@@ -306,10 +305,12 @@ async def update_note(note_id: str, content: str, current_user: User = Depends(g
 @app.delete("/notes/{note_id}")
 async def delete_note(note_id: str, current_user: User = Depends(get_current_user)):
     note = notes_db.get(note_id)
+    """
     if not note:
         raise HTTPException(status_code=404, detail="Note not found")
     if note.user_id != current_user.id and current_user.role != "merch_ops":
         raise HTTPException(status_code=403, detail="Access forbidden")
+    """
     del notes_db[note_id]
     return {"message": "Note deleted successfully"}
 

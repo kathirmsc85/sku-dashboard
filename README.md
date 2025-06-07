@@ -52,7 +52,7 @@ A comprehensive SKU (Stock Keeping Unit) dashboard application built with React.
 
 1. **Clone and setup the project**:
 ```bash
-git clone <repository-url>
+git clone https://github.com/kathirmsc85/sku-dashboard.git
 cd sku-dashboard
 ```
 
