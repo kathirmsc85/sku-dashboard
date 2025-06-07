@@ -1,6 +1,6 @@
 # Spreetail SKU Dashboard 
 
-A comprehensive SKU (Stock Keeping Unit) dashboard application built with React.js frontend and FastAPI backend microservices architecture.
+A comprehensive SKU (Stock Keeping Unit) dashboard application built with React.js frontend and FastAPI backend microservices architecture. created under windows environment setup (DATA_DIR path shuld be changed accordingly).
 
 ## Features
 
@@ -54,7 +54,14 @@ A comprehensive SKU (Stock Keeping Unit) dashboard application built with React.
 ```bash
 git clone https://github.com/kathirmsc85/sku-dashboard.git
 cd sku-dashboard
+
+or 
+
+download as zip file from git and extract in local
+go to the sku-dashboard
+
 ```
+
 
 2. **Install frontend dependencies**:
 ```bash
@@ -79,6 +86,7 @@ pip install -r backend/requirements.txt
 
 **Terminal 1 - Backend**:
 ```bash
+cd backend
 python -m uvicorn main:app --reload --port 8000 &
 # Or manually: cd backend && python -m uvicorn main:app --reload --port 8000
 ```
