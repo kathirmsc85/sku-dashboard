@@ -1,0 +1,112 @@
+[
+    {
+      "id": "sku_001",
+      "name": "Premium Wireless Headphones",
+      "sales": 125000,
+      "returnPercentage": 8.5,
+      "contentScore": 92,
+      "category": "Electronics",
+      "description": "High-quality wireless headphones with noise cancellation and premium sound quality. Features include 30-hour battery life, quick charge, and comfortable over-ear design.",
+      "salesHistory": [18000, 22000, 19500, 25000, 21000, 19500],
+      "lastUpdated": "2024-01-15T10:30:00Z"
+    },
+    {
+      "id": "sku_002", 
+      "name": "Smart Fitness Watch",
+      "sales": 89000,
+      "returnPercentage": 12.3,
+      "contentScore": 78,
+      "category": "Wearables",
+      "description": "Advanced fitness tracking smartwatch with heart rate monitoring, GPS, and water resistance. Includes sleep tracking and smartphone connectivity.",
+      "salesHistory": [12000, 15500, 14000, 16800, 15200, 15500],
+      "lastUpdated": "2024-01-14T08:45:00Z"
+    },
+    {
+      "id": "sku_003",
+      "name": "Organic Cotton T-Shirt",
+      "sales": 45000,
+      "returnPercentage": 5.2,
+      "contentScore": 95,
+      "category": "Apparel",
+      "description": "Sustainably made organic cotton t-shirt with comfortable fit and eco-friendly production. Available in multiple colors and sizes.",
+      "salesHistory": [7500, 8200, 7800, 8500, 7200, 5800],
+      "lastUpdated": "2024-01-13T14:20:00Z"
+    },
+    {
+      "id": "sku_004",
+      "name": "Gaming Mechanical Keyboard",
+      "sales": 67000,
+      "returnPercentage": 18.7,
+      "contentScore": 65,
+      "category": "Electronics",
+      "description": "RGB backlit mechanical gaming keyboard with customizable keys and macro support. Features tactile switches and durable construction.",
+      "salesHistory": [9800, 11200, 10500, 12800, 11500, 10200],
+      "lastUpdated": "2024-01-12T16:10:00Z"
+    },
+    {
+      "id": "sku_005",
+      "name": "Stainless Steel Water Bottle",
+      "sales": 32000,
+      "returnPercentage": 3.1,
+      "contentScore": 88,
+      "category": "Home & Garden",
+      "description": "Double-wall insulated stainless steel water bottle that keeps drinks cold for 24 hours or hot for 12 hours. BPA-free and leak-proof design.",
+      "salesHistory": [5200, 5800, 5400, 6100, 5000, 4500],
+      "lastUpdated": "2024-01-11T12:00:00Z"
+    },
+    {
+      "id": "sku_006",
+      "name": "Bluetooth Portable Speaker",
+      "sales": 78000,
+      "returnPercentage": 22.4,
+      "contentScore": 58,
+      "category": "Electronics", 
+      "description": "Compact Bluetooth speaker with 360-degree sound and waterproof design. Features 20-hour battery life and built-in microphone for calls.",
+      "salesHistory": [11000, 13500, 12200, 14800, 13000, 13500],
+      "lastUpdated": "2024-01-10T09:30:00Z"
+    },
+    {
+      "id": "sku_007",
+      "name": "Yoga Mat Premium",
+      "sales": 28000,
+      "returnPercentage": 7.8,
+      "contentScore": 91,
+      "category": "Sports & Fitness",
+      "description": "Extra thick yoga mat with superior grip and comfort. Made from eco-friendly materials with excellent durability and easy to clean surface.",
+      "salesHistory": [4200, 4800, 4500, 5100, 4600, 4800],
+      "lastUpdated": "2024-01-09T15:45:00Z"
+    },
+    {
+      "id": "sku_008",
+      "name": "LED Desk Lamp",
+      "sales": 41000,
+      "returnPercentage": 14.2,
+      "contentScore": 73,
+      "category": "Home & Garden",
+      "description": "Adjustable LED desk lamp with multiple brightness levels and color temperatures. Features USB charging port and touch controls.",
+      "salesHistory": [6000, 7200, 6800, 7500, 6700, 6800],
+      "lastUpdated": "2024-01-08T11:15:00Z"
+    },
+    {
+      "id": "sku_009",
+      "name": "Wireless Phone Charger",
+      "sales": 55000,
+      "returnPercentage": 9.6,
+      "contentScore": 84,
+      "category": "Electronics",
+      "description": "Fast wireless charging pad compatible with most smartphones. Features LED indicator and overcharge protection with sleek design.",
+      "salesHistory": [8500, 9200, 8800, 9800, 9100, 9600],
+      "lastUpdated": "2024-01-07T13:25:00Z"
+    },
+    {
+      "id": "sku_010",
+      "name": "Running Shoes - Trail Edition",
+      "sales": 92000,
+      "returnPercentage": 11.8,
+      "contentScore": 79,
+      "category": "Footwear",
+      "description": "Durable trail running shoes with enhanced grip and cushioning. Designed for outdoor terrain with breathable mesh and reinforced toe protection.",
+      "salesHistory": [14000, 16200, 15100, 17500, 15800, 13400],
+      "lastUpdated": "2024-01-06T10:40:00Z"
+    }
+  ]

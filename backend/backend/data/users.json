@@ -1,0 +1,7 @@
+[
+    {"userid":1, "username": "alice_brand", "email": "alice@brand.com", "password": "password123", "role": "brand_user"},
+    {"userid":2, "username": "bob_brand", "email": "bob@brand.com", "password": "password123", "role": "brand_user"},
+    {"userid":3, "username": "charlie_ops", "email": "charlie@ops.com", "password": "password123", "role": "merch_ops"},
+    {"userid":4, "username": "diana_brand", "email": "diana@brand.com", "password": "password123", "role": "brand_user"},
+    {"userid":5, "username": "eve_ops", "email": "eve@ops.com", "password": "password123", "role": "merch_ops"}
+]
