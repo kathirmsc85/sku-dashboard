@@ -108,6 +108,7 @@ const SKUTable: React.FC<SKUTableProps> = ({
         <table className="min-w-full divide-y divide-gray-200">
           <thead className="bg-gray-50">
             <tr>
+              <SortableHeader field="id">SKU Id</SortableHeader>
               <SortableHeader field="name">SKU Name</SortableHeader>
               <SortableHeader field="sales">Sales</SortableHeader>
               <SortableHeader field="return_percentage">Return Rate</SortableHeader>
@@ -124,6 +125,14 @@ const SKUTable: React.FC<SKUTableProps> = ({
                 className="hover:bg-gray-50 transition-colors cursor-pointer"
                 onClick={() => onSKUClick(sku)}
               >
+                <td className="px-6 py-4 whitespace-nowrap">
+                  <div>
+                    <div className="text-sm font-medium text-gray-900 truncate max-w-xs">
+                      {sku.id}
+                    </div>
+                    <div className="text-sm text-gray-500">ID: {sku.id.slice(0, 8)}...</div>
+                  </div>
+                </td>
                 <td className="px-6 py-4 whitespace-nowrap">
                   <div>
                     <div className="text-sm font-medium text-gray-900 truncate max-w-xs">
