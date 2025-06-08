@@ -19,7 +19,7 @@ A comprehensive SKU (Stock Keeping Unit) dashboard application built with React.
 - **FastAPI REST API**: Modern, fast API with automatic documentation
 - **JWT Authentication**: Secure token-based authentication
 - **Role-based Access Control**: Different permissions for user roles
-- **In-memory JSON Storage**: Simple data persistence for development
+- **In-memory + File JSON Storage**: Simple data persistence for development
 - **CORS Support**: Configured for frontend integration
 - **Data Validation**: Pydantic models for request/response validation
 - **Sample Data**: Pre-populated with 5 users and 60+ SKUs

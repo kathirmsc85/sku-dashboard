@@ -1,7 +1,51 @@
 [
-    {"userid":1, "username": "alice_brand", "email": "alice@brand.com", "password": "password123", "role": "brand_user"},
-    {"userid":2, "username": "bob_brand", "email": "bob@brand.com", "password": "password123", "role": "brand_user"},
-    {"userid":3, "username": "charlie_ops", "email": "charlie@ops.com", "password": "password123", "role": "merch_ops"},
-    {"userid":4, "username": "diana_brand", "email": "diana@brand.com", "password": "password123", "role": "brand_user"},
-    {"userid":5, "username": "eve_ops", "email": "eve@ops.com", "password": "password123", "role": "merch_ops"}
+    {
+        "id": 1,
+        "username": "alice_brand",
+        "email": "alice@brand.com",
+        "role": "brand_user",
+        "password": "password123"
+    },
+    {
+        "id": 2,
+        "username": "bob_brand",
+        "email": "bob@brand.com",
+        "role": "brand_user",
+        "password": "password123"
+    },
+    {
+        "id": 3,
+        "username": "charlie_ops",
+        "email": "charlie@ops.com",
+        "role": "merch_ops",
+        "password": "password123"
+    },
+    {
+        "id": 4,
+        "username": "diana_brand",
+        "email": "diana@brand.com",
+        "role": "brand_user",
+        "password": "password123"
+    },
+    {
+        "id": 5,
+        "username": "eve_ops",
+        "email": "eve@ops.com",
+        "role": "merch_ops",
+        "password": "password123"
+    },
+    {
+        "id": 6,
+        "username": "test",
+        "email": "test@gmail.com",
+        "role": "brand_user",
+        "password": "test@123"
+    },
+    {
+        "id": 7,
+        "username": "test_mer",
+        "email": "test_mer@gmail.com",
+        "role": "merch_ops",
+        "password": "mer@123"
+    }
 ]

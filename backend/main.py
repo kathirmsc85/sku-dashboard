@@ -37,6 +37,13 @@ class User(BaseModel):
     role: str  # "brand_user" or "merch_ops"
     hashed_password: str
 
+class RegisterUser(BaseModel):
+    id: int
+    username: str
+    email: str
+    role: str  # "brand_user" or "merch_ops"
+    password: str
+
 class UserCreate(BaseModel):
     username: str
     email: str
@@ -84,6 +91,7 @@ NOTES_FILE = os.path.join(DATA_DIR, "notes.json")
 os.makedirs(DATA_DIR, exist_ok=True)
 
 # In-memory storage
+registered_users_db: Dict[str, User] = {}
 users_db: Dict[str, User] = {}
 skus_db: Dict[str, SKU] = {}
 notes_db: Dict[str, Note] = {}
@@ -131,14 +139,13 @@ def initialize_sample_data():
     with open(USERS_FILE, "r") as f:
         existing_users = json.load(f)
         for user_d in existing_users:
-            user = User(
-                id=user_d["userid"],
-                username=user_d["username"],
-                email=user_d["email"],
-                role=user_d["role"],
+            user = User(**user_d,
                 hashed_password=get_password_hash(user_d["password"])
             )
-            users_db[user_d["userid"]] = user
+            users_db[user_d["id"]] = user
+            # Register user for the frontend
+            r_user = RegisterUser(**user_d)
+            registered_users_db[int(r_user.id)] = r_user
 
     import random
     base_sales = random.uniform(1000, 50000)
@@ -165,6 +172,18 @@ def initialize_sample_data():
             )
             skus_db[sku_d['id']] = sku
 
+    # Initialize notes
+    with open(NOTES_FILE, "r") as f:
+        existing_notes = json.load(f)
+        for note_d in existing_notes:
+            note = Note(**note_d)
+            notes_db[note_d['id']] = note
+
+# save notes in the file
+def save_notes():
+    with open(NOTES_FILE, "w") as f:
+        json.dump([n.dict() for n in notes_db.values()], f, indent=4)
+
 # Authentication endpoints
 @app.post("/auth/register", response_model=Token)
 async def register(user: UserCreate):
@@ -175,7 +194,7 @@ async def register(user: UserCreate):
             detail="Username or email already registered"
         )
 
-    user_id = str(uuid.uuid4())
+    user_id = len(users_db) + 1  # Simple ID generation
     hashed_password = get_password_hash(user.password)
     new_user = User(
         id=user_id,
@@ -185,6 +204,19 @@ async def register(user: UserCreate):
         hashed_password=hashed_password
     )
     users_db[user_id] = new_user
+
+    # Save user to file
+    registered_new_user = RegisterUser(
+        id=user_id,
+        username=user.username,
+        email=user.email,
+        role=user.role,
+        password=user.password
+    )
+    registered_users_db[user_id] = registered_new_user
+    with open(USERS_FILE, "w") as f:
+        json.dump([u.dict() for u in registered_users_db.values()], f, indent=4)
+
     access_token_expires = timedelta(minutes=ACCESS_TOKEN_EXPIRE_MINUTES)
     access_token = create_access_token(
         data={"sub": user.username}, expires_delta=access_token_expires
@@ -289,29 +321,29 @@ async def create_note(note: NoteCreate, current_user: User = Depends(get_current
         updated_at=now
     )
     notes_db[note_id] = new_note
+    # Save note to file
+    save_notes()   
+
     return new_note
 
 @app.put("/notes/{note_id}", response_model=Note)
-async def update_note(note_id: str, content: str, current_user: User = Depends(get_current_user)):
+async def update_note(note_id: str, content: str):
     note = notes_db.get(note_id)
     if not note:
         raise HTTPException(status_code=404, detail="Note not found")
-    if note.user_id != current_user.id and current_user.role != "merch_ops":
-        raise HTTPException(status_code=403, detail="Access forbidden")
     note.content = content
     note.updated_at = datetime.now().isoformat()
+    # Save note to file
+    save_notes()
     return note
 
 @app.delete("/notes/{note_id}")
-async def delete_note(note_id: str, current_user: User = Depends(get_current_user)):
-    note = notes_db.get(note_id)
-    """
-    if not note:
+async def delete_note(note_id: str):
+    if note_id not in notes_db:
         raise HTTPException(status_code=404, detail="Note not found")
-    if note.user_id != current_user.id and current_user.role != "merch_ops":
-        raise HTTPException(status_code=403, detail="Access forbidden")
-    """
     del notes_db[note_id]
+    # Save note to file
+    save_notes()
     return {"message": "Note deleted successfully"}
 
 @app.get("/health")
