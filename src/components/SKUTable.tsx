@@ -128,9 +128,8 @@ const SKUTable: React.FC<SKUTableProps> = ({
                 <td className="px-6 py-4 whitespace-nowrap">
                   <div>
                     <div className="text-sm font-medium text-gray-900 truncate max-w-xs">
-                      {sku.id}
+                      {sku.id.toUpperCase().slice(0, 8)}...
                     </div>
-                    <div className="text-sm text-gray-500">ID: {sku.id.slice(0, 8)}...</div>
                   </div>
                 </td>
                 <td className="px-6 py-4 whitespace-nowrap">
@@ -138,7 +137,6 @@ const SKUTable: React.FC<SKUTableProps> = ({
                     <div className="text-sm font-medium text-gray-900 truncate max-w-xs">
                       {sku.name}
                     </div>
-                    <div className="text-sm text-gray-500">ID: {sku.id.slice(0, 8)}...</div>
                   </div>
                 </td>
                 <td className="px-6 py-4 whitespace-nowrap">
