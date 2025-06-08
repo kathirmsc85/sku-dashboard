@@ -1,6 +1,6 @@
 # Spreetail SKU Dashboard 
 
-A comprehensive SKU (Stock Keeping Unit) dashboard application built with React.js frontend and FastAPI backend microservices architecture. created under windows environment setup (DATA_DIR path shuld be changed accordingly).
+A comprehensive SKU (Stock Keeping Unit) dashboard application built with React.js frontend and FastAPI backend microservices architecture.
 
 ## Features
 
