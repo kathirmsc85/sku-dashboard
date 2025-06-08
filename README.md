@@ -44,8 +44,8 @@ A comprehensive SKU (Stock Keeping Unit) dashboard application built with React.
 ## Quick Start
 
 ### Prerequisites
-- Node.js 16+ and npm
-- Python 3.8+
+- Node.js 22+ and npm
+- Python 3.12+
 - pip (Python package manager)
 
 ### Installation
