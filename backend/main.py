@@ -75,7 +75,7 @@ class Token(BaseModel):
     user: Dict[str, Any]
 
 # File paths
-DATA_DIR = 'backend\data'
+DATA_DIR = os.path.join("backend", "data")
 USERS_FILE = os.path.join(DATA_DIR, "users.json")
 SKUS_FILE = os.path.join(DATA_DIR, "skus.json")
 NOTES_FILE = os.path.join(DATA_DIR, "notes.json")
