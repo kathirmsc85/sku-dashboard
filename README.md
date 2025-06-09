@@ -73,8 +73,8 @@ npm install @vitejs/plugin-react@latest --save-dev
 3. **Setup backend**:
 ```bash
 # Create Python virtual environment (optional but recommended)
-python -m venv backend/venv
-source backend/venv/bin/activate  # On Windows: backend\venv\Scripts\activate
+python -m venv venv
+source venv/bin/activate  # On Windows: backend\venv\Scripts\activate
 
 # Install backend dependencies
 pip install -r backend/requirements.txt

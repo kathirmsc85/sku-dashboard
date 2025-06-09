@@ -119,7 +119,6 @@ async def get_current_user(credentials: HTTPAuthorizationCredentials = Depends(s
         detail="Could not validate credentials",
         headers={"WWW-Authenticate": "Bearer"},
     )
-    print(f"Received credentials: {credentials}")
     try:
         payload = jwt.decode(credentials.credentials, SECRET_KEY, algorithms=[ALGORITHM])
         username: str = payload.get("sub")
@@ -285,7 +284,9 @@ async def get_skus(
     # Apply sorting
     if sort_by:
         reverse = sort_order == "desc"
-        if sort_by == "name":
+        if sort_by == "id":
+            user_skus.sort(key=lambda x: x.id, reverse=reverse)
+        elif sort_by == "name":
             user_skus.sort(key=lambda x: x.name, reverse=reverse)
         elif sort_by == "sales":
             user_skus.sort(key=lambda x: x.sales, reverse=reverse)
